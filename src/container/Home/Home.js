@@ -4,7 +4,7 @@ import Card from 'react-bootstrap/Card';
 import React, { useState, useEffect } from 'react';
 import './Home.css'
 
-function Home({ target = 135, target1 = 52, target2 = 75, target3 = 250, duration = 2000, duration = 2000 }) {
+function Home({ target = 135, target1 = 52, target2 = 75, target3 = 250, duration = 2000, duration1 = 2000 }) {
     const [count, setCount] = useState(0);
     const [count1, setCount1] = useState(0);
     const [count2, setCount2] = useState(0);
@@ -63,7 +63,7 @@ function Home({ target = 135, target1 = 52, target2 = 75, target3 = 250, duratio
     }, [target2, duration]);
 
     useEffect(() => {
-        const intervalTime = duration / target3;
+        const intervalTime = duration1 / target3;
 
         if (target3 <= 0) return;
 
@@ -78,7 +78,8 @@ function Home({ target = 135, target1 = 52, target2 = 75, target3 = 250, duratio
         }, intervalTime);
 
         return () => clearInterval(interval);
-    }, [target3, duration]);
+    }, [target3, duration1]);
+
 
     return (
 
@@ -269,7 +270,7 @@ function Home({ target = 135, target1 = 52, target2 = 75, target3 = 250, duratio
                 </div>
             </section>
         </div>
-
+        
     );
 };
 
