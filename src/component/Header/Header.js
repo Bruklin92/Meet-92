@@ -10,7 +10,7 @@ function Header() {
             <Container>
                 <div className='navbar'>
                     <div className='header_img'>
-                        <Navbar.Brand href="#home"><img src="img/kirai.svg" alt='Logo' /></Navbar.Brand>
+                        <Navbar.Brand href="#home"><img src="img/kirai.svg" alt='Logo'/></Navbar.Brand>
                     </div>
                     <div>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
