@@ -6,7 +6,7 @@ import './Header.css'
 
 function Header() {
     return (
-        <Navbar expand="lg" className="bg-body-tertiary">
+        <Navbar expand="lg" className="bg-body-tertiary fade-slide-in">
             <Container>
                 <div className='navbar'>
                     <div className='header_img'>
