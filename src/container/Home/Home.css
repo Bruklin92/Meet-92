@@ -57,7 +57,7 @@
 .hero_had {
     margin-top: 100px;
 }
-    
+
 /* --------------Section-1------------------------ */
 
 .Digital {
@@ -405,4 +405,27 @@ img:hover {
 
 .fade-out {
     opacity: 0;
+}
+
+.product {
+    background-color: #1A191A;
+}
+
+.product h2 {
+    color: white;
+}
+
+.col-5 {
+    min-width: 250px;
+    padding: 1rem;
+    margin: 50px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    transition: box-shadow 0.3s ease;
+    transition: transform 0.5s
+}
+
+.col-5:hover {
+    transform: scale(1.1)
 }

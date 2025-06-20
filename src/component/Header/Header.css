@@ -11,7 +11,8 @@ body {
   width: 90%;
   top: 0;
   left: 5%;
-  background: rgba(255, 255, 255, 0.1);
+  /* background: rgba(255, 255, 255, 0.1); */
+  background: black;
   backdrop-filter: blur(10px);
   color: white;
   display: flex;

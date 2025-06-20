@@ -2,14 +2,50 @@ import Container from "react-bootstrap/esm/Container";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import React, { useState, useEffect } from 'react';
-
 import './Home.css'
+import { useDispatch, useSelector } from "react-redux";
+import { fetchProduct } from "../../redux/slice/productSlice";
+import { Row } from "react-bootstrap";
 
 function Home({ target = 135, target1 = 52, target2 = 75, target3 = 250, duration = 2000, duration1 = 2000 }) {
     const [count, setCount] = useState(0);
     const [count1, setCount1] = useState(0);
     const [count2, setCount2] = useState(0);
     const [count3, setCount3] = useState(0);
+
+    // const getData = async () => {
+    //     try {
+    //         const response = await fetch("http://localhost:5000/api/v1/categories/list-categories");
+    //         const json = await response.json();
+    //         console.log(json.data);
+    //     } catch (error) {
+    //         console.error(error.message);
+    //     }
+
+
+    // }
+
+    const product = useSelector(state => state.product);
+
+    const dispatch = useDispatch();
+
+    console.log(product.data);
+
+    useEffect(() => {
+        dispatch(fetchProduct());
+    }, [])
+
+    // const getProduct = async () => {
+    //     try {
+    //         const response = await fetch('http://localhost:5000/api/v1/products/list-products');
+    //         const json = await response.json();
+    //         console.log(json.data);
+
+    //     } catch (error) {
+    //         console.log(error);
+    //     }
+    // }
+
 
 
     useEffect(() => {
@@ -189,7 +225,7 @@ function Home({ target = 135, target1 = 52, target2 = 75, target3 = 250, duratio
                         </div>
                     </Container>
                 </div>
-            </section>  
+            </section>
 
             <section className="work">
                 <Container>
@@ -270,6 +306,23 @@ function Home({ target = 135, target1 = 52, target2 = 75, target3 = 250, duratio
                     </Container>
                 </div>
             </section>
+
+            <section className="product">
+                <Container>
+                    <h2>Product List</h2>
+                    <Row>
+                        {product?.data?.map(v => (
+                            <div className="col-5">
+                                <div>
+                                    <h3>{v.name}</h3>
+                                    <p>{v.description}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </Row>
+                </Container>
+            </section>
+
         </div>
     );
 };

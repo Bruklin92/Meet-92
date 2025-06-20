@@ -3,6 +3,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './component/Header/Header';
 import Home from './container/Home/Home';
 import Footer from './component/Footer/Footer';
+import { Provider } from 'react-redux';
+import { strore } from './redux/store/store';
 
 <link
   rel="stylesheet"
@@ -13,11 +15,11 @@ import Footer from './component/Footer/Footer';
 
 function App() {
   return (
-    <>
+    <Provider store={strore}>
       <Header />
       <Home />
       <Footer />
-    </>
+    </Provider>
   );
 }
 
